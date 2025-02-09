@@ -6,6 +6,8 @@ import About from './Compnents/About';
 import Error from './Compnents/Error';
 import TopItem from './Compnents/TopItemMenu';
 import Item from './Compnents/ItemDetails';
+import { ShopProvider } from './Context/ShopContext';
+import Cart from './Compnents/Cart';
 
 const appRouter = createBrowserRouter([
   {
@@ -47,13 +49,26 @@ const appRouter = createBrowserRouter([
       </div>
     ),
     errorElement: <Error />,
-  }
+  },
+  {
+    path: "/cart", // Add a route for the Cart page
+    element: (
+      <div>
+        <Navbar />
+        <Cart />
+
+      </div>
+    ),
+    errorElement: <Error />,
+  },
 ]);
 
 const App = () => {
   return (
     <div className="App">
-      <RouterProvider router={appRouter} />
+      <ShopProvider>
+        <RouterProvider router={appRouter} />
+      </ShopProvider>
     </div>
   );
 };

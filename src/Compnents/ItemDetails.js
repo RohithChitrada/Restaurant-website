@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { food_list } from '../asserts/assets';
+import { useShop } from '../Context/ShopContext';
 
 const ItemDetails = () => {
     const { id } = useParams();
     const [itemdata, setItemData] = useState({});
     const [review,setReview]=useState([]);
     const [newReview, setNewReview] = useState("");
-    console.log(id);
+    
+    const {addToCart}=useShop();
 
     useEffect(() => {
         const itemdetails = food_list.find((item) => item._id === id);
@@ -50,7 +52,8 @@ const ItemDetails = () => {
                         <p className="text-sm text-gray-500 uppercase font-medium mb-6">
                             Category: <span className="text-gray-800">{itemdata.category}</span>
                         </p>
-                        <button className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition">
+                        <button className="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition" 
+                        onClick={(e)=>{e.preventDefault(); addToCart(itemdata)}}>
                             Add to Cart
                         </button>
                     </div>
