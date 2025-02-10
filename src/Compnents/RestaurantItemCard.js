@@ -23,7 +23,7 @@ const RestaurantItemCard = ({ data }) => {
         <p className="text-lg font-bold text-green-600">Rs{data?.price*15}/-</p>
         
         {/* Add to Cart Button */}
-        <button className="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={(e)=>{e.preventDefault(); addToCart(data); alert("Item Added to the Cart")}}>
+        <button className="mt-4 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600" onClick={(e)=>{e.preventDefault(); addToCart(data);}}>
           Add to Cart
         </button>
       </div>

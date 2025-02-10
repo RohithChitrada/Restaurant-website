@@ -6,7 +6,6 @@ import RestaurantItemCard from './RestaurantItemCard';
 const TopItemMenu = () => {
     const [MenuItems, setMenuItems] = useState([]);
     const { category } = useParams(); 
-    console.log(category);
 
     useEffect(() => {
         const filteredData = food_list.filter(

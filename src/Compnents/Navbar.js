@@ -11,8 +11,7 @@ const Navbar = () => {
         <img className="w-16 md:w-20" src="https://logowik.com/content/uploads/images/restaurant9491.logowik.com.webp" alt="logo" />
         <ul className="hidden md:flex space-x-10">
           <Link to="/" className="p-2 cursor-pointer hover:text-gray-500">Home</Link>
-          <Link to="/about" className="p-2 cursor-pointer hover:text-gray-500">About</Link>
-          <li className="p-2 cursor-pointer hover:text-gray-500">Contact</li>
+          <Link to="/contact" className="p-2 cursor-pointer hover:text-gray-500">Contact</Link>
           <Link to="/cart" className="p-2 cursor-pointer hover:text-gray-500">Cart
           {getLength() > 0 && (
             <span className="absolute top-7 right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
@@ -28,8 +27,7 @@ const Navbar = () => {
       {/*mobile navbar */}
       <ul className={`${Menu?'block':'hidden'} md:hidden w-full bg-white text-center shadow-md space-y-1`}>
           <Link to="/" className=" block p-2 cursor-pointer hover:text-gray-500">Home</Link>
-          <Link to="/about" className="block p-2 cursor-pointer hover:text-gray-500">About</Link>
-          <li className="p-2 cursor-pointer hover:text-gray-500">Contact</li>
+          <Link to="/contact" className=" block p-2 cursor-pointer hover:text-gray-500">Contact</Link>
           <Link to="/cart" className="block p-2 cursor-pointer hover:text-gray-500">Cart
           {getLength() > 0 && (
             <span className="absolute bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">

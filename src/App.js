@@ -2,12 +2,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import Home from './Compnents/Home';
 import Navbar from './Compnents/Navbar';
-import About from './Compnents/About';
+import Contact from './Compnents/Contact';
 import Error from './Compnents/Error';
 import TopItem from './Compnents/TopItemMenu';
 import Item from './Compnents/ItemDetails';
 import { ShopProvider } from './Context/ShopContext';
 import Cart from './Compnents/Cart';
+import Footer from './Compnents/Footer';
+import Notification from './Compnents/Notification';
 
 const appRouter = createBrowserRouter([
   {
@@ -16,16 +18,18 @@ const appRouter = createBrowserRouter([
       <div>
         <Navbar />
         <Home />
+        <Footer/>
       </div>
     ),
     errorElement: <Error />,
   },
   {
-    path: "/about",
+    path: "/contact",
     element: (
       <div>
         <Navbar />
-        <About />
+        <Contact />
+        <Footer/>
       </div>
     ),
     errorElement: <Error />,
@@ -36,6 +40,7 @@ const appRouter = createBrowserRouter([
       <div>
         <Navbar/>
         <TopItem/>
+        <Footer/>
       </div>
     ),
     errorElement: <Error />,
@@ -46,6 +51,7 @@ const appRouter = createBrowserRouter([
       <div>
         <Navbar/>
         <Item/>
+        <Footer/>
       </div>
     ),
     errorElement: <Error />,
@@ -56,6 +62,7 @@ const appRouter = createBrowserRouter([
       <div>
         <Navbar />
         <Cart />
+        <Footer/>
 
       </div>
     ),
@@ -67,6 +74,7 @@ const App = () => {
   return (
     <div className="App">
       <ShopProvider>
+        <Notification />
         <RouterProvider router={appRouter} />
       </ShopProvider>
     </div>
